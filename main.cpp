@@ -16,33 +16,26 @@ int main()
     Point p1(100, 100);
     Point p2(200, 200);
     Point p3(150, 50);
-    Line l1(p1, p2);
+    // Line l1(p1, p2);
     
-    // Rectangle rect(p1, p2);
+    Rectangle
+
     // Triangle triangle(p1, p2, p3);
 
     p1.draw();
     p2.draw();
     p3.draw();
-    l1.draw();
-    // rect.draw();
+    // l1.draw();
+    // r.draw();
     // triangle.draw();
 
-    // // 输出矩形的周长
-    // std::string perimeterText = "Rectangle perimeter: " + std::to_string(rect.perimeter());
+    // 输出矩形的周长
+    // std::string perimeterText = "Rectangle perimeter: " + std::to_string(r.perimeter());
     // outtextxy(10, 110, perimeterText.c_str());
 
-    // // 输出矩形的面积
-    // std::string rectAreaText = "Rectangle area: " + std::to_string(rect.area());
-    // outtextxy(10, 130, rectAreaText.c_str());
-
-    // // 输出三角形的周长
-    // std::string trianglePerimeterText = "Triangle perimeter: " + std::to_string(triangle.perimeter());
-    // outtextxy(10, 150, trianglePerimeterText.c_str());
-
-    // // 输出三���形的面积
-    // std::string triangleAreaText = "Triangle area: " + std::to_string(triangle.area());
-    // outtextxy(10, 170, triangleAreaText.c_str());
+    // 输出矩形的面积
+    // std::string areaText = "Rectangle area: " + std::to_string(r.area());
+    // outtextxy(10, 130, areaText.c_str());
 
     getch();
     closegraph();
