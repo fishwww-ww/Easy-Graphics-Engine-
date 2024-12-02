@@ -19,8 +19,9 @@ public:
     ~Triangle();
 
     void draw() const;
-    double perimeter() const; // 计算三角形的周长
-    double area() const; // 计算三角形的面积
+    double perimeter() const;
+    double area() const;
+    void move(int dx, int dy); // 移动三角形的方法
     static int getCount(); // 静态成员函数，返回当前对象计数
 };
 

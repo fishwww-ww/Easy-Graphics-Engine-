@@ -24,6 +24,10 @@ double Circle::area() const {
     return M_PI * radius * radius; // 计算圆的面积
 }
 
+void Circle::move(int dx, int dy) {
+    center.move(dx, dy); // 移动圆心
+}
+
 int Circle::getCount() {
     return count; // 返回当前对象计数
 }

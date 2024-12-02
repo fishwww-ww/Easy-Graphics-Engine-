@@ -32,6 +32,15 @@ double Triangle::area() const {
     return std::sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
+void Triangle::move(int dx, int dy) {
+    vertex1.move(dx, dy); // 移动顶点1
+    vertex2.move(dx, dy); // 移动顶点2
+    vertex3.move(dx, dy); // 移动顶点3
+    side1.move(dx, dy); // 移动边1
+    side2.move(dx, dy); // 移动边2
+    side3.move(dx, dy); // 移动边3
+}
+
 int Triangle::getCount() {
     return count; // 返回当前对象计数
 }
