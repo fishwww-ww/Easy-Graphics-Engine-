@@ -1,4 +1,6 @@
 #include "../include/Line.h"
+#include <cmath> // 包含 cmath 头文件，用于计算旋转
+#define M_PI 3.14159265358979323846 // 定义圆周率
 
 int Line::count = 0; // 初始化静态成员变量
 
@@ -23,6 +25,27 @@ double Line::length() const {
 void Line::move(int dx, int dy) {
     start.move(dx, dy); // 移动起点
     end.move(dx, dy); // 移动终点
+}
+
+void Line::rotate(double angle, const Point& pivot) {
+    // 将角度转换为弧度
+    double radians = angle * M_PI / 180.0;
+
+    // 计算旋转后的起点坐标
+    int dx1 = start.getX() - pivot.getX();
+    int dy1 = start.getY() - pivot.getY();
+    int newStartX = static_cast<int>(dx1 * cos(radians) - dy1 * sin(radians)) + pivot.getX();
+    int newStartY = static_cast<int>(dx1 * sin(radians) + dy1 * cos(radians)) + pivot.getY();
+
+    // 计算旋转后的终点坐标
+    int dx2 = end.getX() - pivot.getX();
+    int dy2 = end.getY() - pivot.getY();
+    int newEndX = static_cast<int>(dx2 * cos(radians) - dy2 * sin(radians)) + pivot.getX();
+    int newEndY = static_cast<int>(dx2 * sin(radians) + dy2 * cos(radians)) + pivot.getY();
+
+    // 更新起点和终点位置
+    start = Point(newStartX, newStartY);
+    end = Point(newEndX, newEndY);
 }
 
 int Line::getCount() {
