@@ -1,4 +1,6 @@
 #include "../include/Point.h"
+#include <cmath> // 包含 cmath 头文件，用于计算旋转
+#define M_PI 3.14159265358979323846 // 定义圆周率
 
 int Point::count = 0; // 初始化静态成员变量
 
@@ -18,6 +20,21 @@ void Point::draw() const {
 void Point::move(int dx, int dy) {
     x += dx; // 更新 x 坐标
     y += dy; // 更新 y 坐标
+}
+
+void Point::rotate(double angle, const Point& pivot) {
+    // 将角度转换为弧度
+    double radians = angle * M_PI / 180.0;
+
+    // 计算旋转后的坐标
+    int dx = x - pivot.getX();
+    int dy = y - pivot.getY();
+    int newX = static_cast<int>(dx * cos(radians) - dy * sin(radians)) + pivot.getX();
+    int newY = static_cast<int>(dx * sin(radians) + dy * cos(radians)) + pivot.getY();
+
+    // 更新坐标
+    x = newX;
+    y = newY;
 }
 
 int Point::getCount() {

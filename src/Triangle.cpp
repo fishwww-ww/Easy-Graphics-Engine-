@@ -41,6 +41,15 @@ void Triangle::move(int dx, int dy) {
     side3.move(dx, dy); // 移动边3
 }
 
+void Triangle::rotate(double angle, const Point& pivot) {
+    vertex1.rotate(angle, pivot); // 旋转顶点1
+    vertex2.rotate(angle, pivot); // 旋转顶点2
+    vertex3.rotate(angle, pivot); // 旋转顶点3
+    side1.rotate(angle, pivot); // 旋转边1
+    side2.rotate(angle, pivot); // 旋转边2
+    side3.rotate(angle, pivot); // 旋转边3
+}
+
 int Triangle::getCount() {
     return count; // 返回当前对象计数
 }

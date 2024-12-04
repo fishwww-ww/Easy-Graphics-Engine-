@@ -1,4 +1,6 @@
 #include "../include/Rectangles.h"
+#include <cmath> // 包含 cmath 头文件，用于计算旋转
+#define M_PI 3.14159265358979323846 // 定义圆周率
 
 int Rectangles::count = 0; // 初始化静态成员变量
 
@@ -41,6 +43,24 @@ void Rectangles::move(int dx, int dy) {
     bottom.move(dx, dy); // 移动下边
     left.move(dx, dy); // 移动左边
     right.move(dx, dy); // 移动右边
+}
+
+void Rectangles::rotate(double angle, const Point& pivot) {
+    // 旋转顶点
+    topLeft.rotate(angle, pivot);
+    bottomRight.rotate(angle, pivot);
+
+    // 更新边
+    top = Line(topLeft, Point(bottomRight.getX(), topLeft.getY()));
+    bottom = Line(Point(topLeft.getX(), bottomRight.getY()), bottomRight);
+    left = Line(topLeft, Point(topLeft.getX(), bottomRight.getY()));
+    right = Line(Point(bottomRight.getX(), topLeft.getY()), bottomRight);
+
+    // 旋转边
+    top.rotate(angle, pivot);
+    bottom.rotate(angle, pivot);
+    left.rotate(angle, pivot);
+    right.rotate(angle, pivot);
 }
 
 int Rectangles::getCount() {

@@ -15,11 +15,16 @@ int main()
 
     Point p1(100, 100);
     Point p2(200, 200);
- 
-    Triangle t(p1, p2, Point(300, 100));
-    t.draw();
-    t.move(250, 250);
-    t.draw();
+    Point pivot(240, 240);
+    Rectangles rect(p1, p2);
+
+    p1.draw();
+    p2.draw();
+    rect.draw();
+
+    // 围绕点 pivot 旋转矩形并重新绘制
+    rect.rotate(90, p2); // 旋转45度
+    rect.draw();
 
     getch();
     closegraph();
