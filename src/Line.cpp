@@ -48,6 +48,11 @@ void Line::rotate(double angle, const Point& pivot) {
     end = Point(newEndX, newEndY);
 }
 
+void Line::mirror(const Point& axisPoint, bool horizontal) {
+    start.mirror(axisPoint, horizontal); // 镜像起点
+    end.mirror(axisPoint, horizontal); // 镜像终点
+}
+
 int Line::getCount() {
     return count; // 返回当前对象计数
 }

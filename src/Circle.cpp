@@ -42,6 +42,10 @@ void Circle::rotate(double angle, const Point& pivot) {
     center = Point(newX, newY);
 }
 
+void Circle::mirror(const Point& axisPoint, bool horizontal) {
+    center.mirror(axisPoint, horizontal); // 镜像圆心
+}
+
 int Circle::getCount() {
     return count; // 返回当前对象计数
 }
