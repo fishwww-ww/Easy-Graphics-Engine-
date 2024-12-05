@@ -15,16 +15,18 @@ int main()
 
     Point p1(100, 100);
     Point p2(200, 200);
-    Point pivot(240, 240);
+    Point pivot(250, 250);
     Rectangles rect(p1, p2);
 
     p1.draw();
     p2.draw();
     rect.draw();
+    pivot.draw();
 
-    // 围绕点 pivot 旋转矩形并重新绘制
-    rect.rotate(90, p2); // 旋转45度
+    // 围绕点 pivot 进行水平镜像并重新绘制
+    rect.mirror(pivot, true); // 水平镜像
     rect.draw();
+
 
     getch();
     closegraph();

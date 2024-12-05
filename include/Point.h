@@ -19,6 +19,7 @@ public:
     int getX() const { return x; } // 获取 x 坐标
     int getY() const { return y; } // 获取 y 坐标
     void rotate(double angle, const Point& pivot); // 旋转方法
+    void mirror(const Point& axisPoint, bool horizontal); // 镜像方法
     static int getCount();
 };
 

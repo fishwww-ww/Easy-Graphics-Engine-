@@ -50,6 +50,15 @@ void Triangle::rotate(double angle, const Point& pivot) {
     side3.rotate(angle, pivot); // 旋转边3
 }
 
+void Triangle::mirror(const Point& axisPoint, bool horizontal) {
+    vertex1.mirror(axisPoint, horizontal); // 镜像顶点1
+    vertex2.mirror(axisPoint, horizontal); // 镜像顶点2
+    vertex3.mirror(axisPoint, horizontal); // 镜像顶点3
+    side1.mirror(axisPoint, horizontal);
+    side2.mirror(axisPoint, horizontal);
+    side3.mirror(axisPoint, horizontal);
+}
+
 int Triangle::getCount() {
     return count; // 返回当前对象计数
 }

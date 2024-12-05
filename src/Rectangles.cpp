@@ -63,6 +63,18 @@ void Rectangles::rotate(double angle, const Point& pivot) {
     right.rotate(angle, pivot);
 }
 
+void Rectangles::mirror(const Point& axisPoint, bool horizontal) {
+    // 镜像顶点
+    topLeft.mirror(axisPoint, horizontal);
+    bottomRight.mirror(axisPoint, horizontal);
+
+    // 更新边
+    top = Line(topLeft, Point(bottomRight.getX(), topLeft.getY()));
+    bottom = Line(Point(topLeft.getX(), bottomRight.getY()), bottomRight);
+    left = Line(topLeft, Point(topLeft.getX(), bottomRight.getY()));
+    right = Line(Point(bottomRight.getX(), topLeft.getY()), bottomRight);
+}
+
 int Rectangles::getCount() {
     return count; // 返回当前对象计数
 }

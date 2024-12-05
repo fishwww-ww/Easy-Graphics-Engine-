@@ -37,6 +37,14 @@ void Point::rotate(double angle, const Point& pivot) {
     y = newY;
 }
 
+void Point::mirror(const Point& axisPoint, bool horizontal) {
+    if (horizontal) {
+        y = 2 * axisPoint.getY() - y; // 水平镜像
+    } else {
+        x = 2 * axisPoint.getX() - x; // 垂直镜像
+    }
+}
+
 int Point::getCount() {
     return count; // 返回当前对象计数
 }
