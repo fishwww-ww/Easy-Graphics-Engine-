@@ -59,6 +59,34 @@ void Triangle::mirror(const Point& axisPoint, bool horizontal) {
     side3.mirror(axisPoint, horizontal);
 }
 
+void Triangle::scale(double factor, const Point& pivot) {
+    // 计算缩放后的顶点坐标
+    int dx1 = vertex1.getX() - pivot.getX();
+    int dy1 = vertex1.getY() - pivot.getY();
+    int newVertex1X = static_cast<int>(dx1 * factor) + pivot.getX();
+    int newVertex1Y = static_cast<int>(dy1 * factor) + pivot.getY();
+
+    int dx2 = vertex2.getX() - pivot.getX();
+    int dy2 = vertex2.getY() - pivot.getY();
+    int newVertex2X = static_cast<int>(dx2 * factor) + pivot.getX();
+    int newVertex2Y = static_cast<int>(dy2 * factor) + pivot.getY();
+
+    int dx3 = vertex3.getX() - pivot.getX();
+    int dy3 = vertex3.getY() - pivot.getY();
+    int newVertex3X = static_cast<int>(dx3 * factor) + pivot.getX();
+    int newVertex3Y = static_cast<int>(dy3 * factor) + pivot.getY();
+
+    // 更新顶点位置
+    vertex1 = Point(newVertex1X, newVertex1Y);
+    vertex2 = Point(newVertex2X, newVertex2Y);
+    vertex3 = Point(newVertex3X, newVertex3Y);
+
+    // 更新边
+    side1 = Line(vertex1, vertex2);
+    side2 = Line(vertex2, vertex3);
+    side3 = Line(vertex3, vertex1);
+}
+
 int Triangle::getCount() {
     return count; // 返回当前对象计数
 }

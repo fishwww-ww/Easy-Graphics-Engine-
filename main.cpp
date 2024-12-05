@@ -15,18 +15,19 @@ int main()
 
     Point p1(100, 100);
     Point p2(200, 200);
-    Point pivot(250, 250);
-    Rectangles rect(p1, p2);
+    Point p3(150, 50);
+    Point pivot(150, 150);
+    Triangle triangle(p1, p2, p3);
 
     p1.draw();
     p2.draw();
-    rect.draw();
+    p3.draw();
+    triangle.draw();
     pivot.draw();
 
-    // 围绕点 pivot 进行水平镜像并重新绘制
-    rect.mirror(pivot, true); // 水平镜像
-    rect.draw();
-
+    // 围绕点 pivot 缩放三角形并重新绘制
+    triangle.scale(1.5, pivot); // 放大1.5倍
+    triangle.draw();
 
     getch();
     closegraph();

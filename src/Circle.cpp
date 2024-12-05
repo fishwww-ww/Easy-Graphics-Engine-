@@ -46,6 +46,10 @@ void Circle::mirror(const Point& axisPoint, bool horizontal) {
     center.mirror(axisPoint, horizontal); // 镜像圆心
 }
 
+void Circle::scale(double factor) {
+    radius *= factor;
+}
+
 int Circle::getCount() {
     return count; // 返回当前对象计数
 }
