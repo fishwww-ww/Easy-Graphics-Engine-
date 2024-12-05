@@ -24,6 +24,7 @@ public:
     void move(int dx, int dy); // 移动方法
     void rotate(double angle, const Point& pivot); // 旋转方法
     void mirror(const Point& axisPoint, bool horrizontal);
+    void scale(double factor, const Point& pivot); // 缩放方法
     static int getCount(); // 静态成员函数，返回当前对象计数
 };
 
