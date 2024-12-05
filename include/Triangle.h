@@ -5,6 +5,7 @@
 #include "Line.h"
 
 class Triangle {
+// protected:
 private:
     Point vertex1; // 顶点1
     Point vertex2; // 顶点2

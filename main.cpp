@@ -4,8 +4,10 @@
 #include "../include/Circle.h"
 #include "../include/Rectangles.h"
 #include "../include/Triangle.h"
+#include "../include/EquilateralTriangle.h"
 #include <string> // 包含 string 头文件
 #include <iostream> // 包含 iostream 头文件
+#include <cmath> // 包含 cmath 头文件，用于计算旋转
 
 int main()
 {
@@ -13,21 +15,20 @@ int main()
     setbkcolor(WHITE);
     cleardevice();
 
-    Point p1(100, 100);
-    Point p2(200, 200);
-    Point p3(150, 50);
-    Point pivot(150, 150);
-    Triangle triangle(p1, p2, p3);
+    Point p1(100, 200);
+    Point p2(150, 200);
+    Point p3(200, 250);
+    Point pivot(100, 100);
+    Shape* t =new EquilateralTriangle(p1, p2, p3);
 
-    p1.draw();
-    p2.draw();
-    p3.draw();
-    triangle.draw();
-    pivot.draw();
+    t->draw();
+    // t->perimeter();
+    t->mirror(pivot, true);
+    t->draw();
+    std::string areaText = "Area: " + std::to_string(t->area());
+    outtextxy(100, 150, areaText.c_str());
 
-    // 围绕点 pivot 缩放三角形并重新绘制
-    triangle.scale(1.5, pivot); // 放大1.5倍
-    triangle.draw();
+    delete t;
 
     getch();
     closegraph();
