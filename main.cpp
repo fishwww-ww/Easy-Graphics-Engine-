@@ -25,7 +25,10 @@ int main()
     // t->perimeter();
     t->mirror(pivot, true);
     t->draw();
-    std::string areaText = "Area: " + std::to_string(t->area());
+    Shape* t2 = new EquilateralTriangle(p3, p2, p1);
+    EquilateralTriangle t3(p2, p1, p3);
+    // std::string areaText = "count: " + std::to_string(t->getCount());
+    std::string areaText = "count: " + std::to_string(EquilateralTriangle::getCount());
     outtextxy(100, 150, areaText.c_str());
 
     delete t;
