@@ -73,3 +73,7 @@ void EquilateralTriangle::scale(double factor, const Point& pivot) {
     side3.scale(factor, pivot); // 缩放边3
     // Triangle::scale(factor, pivot);
 }
+
+int EquilateralTriangle::getCount() {
+    return count; // 返回当前对象计数
+}

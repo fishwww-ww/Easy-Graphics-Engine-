@@ -27,6 +27,7 @@ public:
     void rotate(double angle, const Point& pivot) override;
     void mirror(const Point& axisPoint, bool horizontal) override;
     void scale(double factor, const Point& pivot) override;
+    static int getCount(); // 静态成员函数，返回当前对象计数
 };
 
 #endif // EQUILATERAL_TRIANGLE_H

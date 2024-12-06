@@ -15,7 +15,6 @@ public:
     virtual void rotate(double angle, const Point& pivot) = 0; // 纯虚函数，用于旋转形状
     virtual void mirror(const Point& axisPoint, bool horizontal) = 0; // 纯虚函数，用于镜像形状
     virtual void scale(double factor, const Point& pivot) = 0; // 纯虚函数，用于缩放形状
-    // virtual static int getCount() = 0; // 静态成员函数，返回当前对象计数
 };
 
 #endif // SHAPE_H
