@@ -1,4 +1,4 @@
-#include "../include/Point.h"
+#include "../include/Point.hpp"
 #include <cmath> // 包含 cmath 头文件，用于计算旋转
 #define M_PI 3.14159265358979323846 // 定义圆周率
 

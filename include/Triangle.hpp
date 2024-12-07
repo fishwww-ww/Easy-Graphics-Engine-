@@ -1,10 +1,11 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
-#include "Point.h"
-#include "Line.h"
+#include "Point.hpp"
+#include "Line.hpp"
 
 class Triangle {
+// protected:
 private:
     Point vertex1; // 顶点1
     Point vertex2; // 顶点2

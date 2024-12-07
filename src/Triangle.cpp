@@ -1,4 +1,4 @@
-#include "../include/Triangle.h"
+#include "../include/Triangle.hpp"
 #include <cmath> // 包含 cmath 头文件，用于计算面积
 
 int Triangle::count = 0; // 初始化静态成员变量

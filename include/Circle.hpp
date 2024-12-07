@@ -1,8 +1,8 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#include "Point.h"
-#include "Line.h"
+#include "Point.hpp"
+#include "Line.hpp"
 
 class Circle {
 private:

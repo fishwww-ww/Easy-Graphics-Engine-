@@ -1,8 +1,8 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-#include "Point.h"
-#include "Line.h"
+#include "Point.hpp"
+#include "Line.hpp"
 
 class Rectangles {
 private:
