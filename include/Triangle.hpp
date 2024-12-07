@@ -1,8 +1,8 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
-#include "Point.h"
-#include "Line.h"
+#include "Point.hpp"
+#include "Line.hpp"
 
 class Triangle {
 // protected:

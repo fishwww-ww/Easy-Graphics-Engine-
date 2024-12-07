@@ -1,7 +1,7 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include "Point.h"
+#include "Point.hpp"
 #include <cmath> // 包含 cmath 头文件，用于计算平方根
 
 class Line {

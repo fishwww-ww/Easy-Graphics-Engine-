@@ -1,10 +1,10 @@
 #ifndef EQUILATERAL_TRIANGLE_H
 #define EQUILATERAL_TRIANGLE_H
 
-#include "Shape.h"
-#include "Triangle.h"
-#include "Point.h"
-#include "Line.h"
+#include "Shape.hpp"
+#include "Triangle.hpp"
+#include "Point.hpp"
+#include "Line.hpp"
 
 // class EquilateralTriangle : public Shape, public Triangle {
 class EquilateralTriangle : public Shape {
