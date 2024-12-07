@@ -6,9 +6,10 @@
 int EquilateralTriangle::count = 0; // 初始化静态成员变量
 
 
-EquilateralTriangle::EquilateralTriangle(const Point& v1, const Point& v2, const Point& v3)
-    : vertex1(v1), vertex2(v2), vertex3(v3),
-      side1(v1, v2), side2(v2, v3), side3(v3, v1) {
+// EquilateralTriangle::EquilateralTriangle(const Point& v1, const Point& v2, const Point& v3)
+EquilateralTriangle::EquilateralTriangle(const Point& v1, double length)
+    : vertex1(v1), vertex2(v1.getX()+length,v1.getY()), vertex3(v1.getX()+length/2, v1.getY()+length*std::sqrt(3)/2),
+      side1(vertex1, vertex2), side2(vertex2, vertex3), side3(vertex3, vertex1) {
     count++; // 构造函数中增加计数
 }
 

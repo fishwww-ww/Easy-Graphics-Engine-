@@ -15,9 +15,11 @@ private:
     Line side1; // 边1
     Line side2; // 边2
     Line side3; // 边3
+    double length; // 边长
     static int count;
 public:
-    EquilateralTriangle(const Point& v1, const Point& v2, const Point& v3);
+    // EquilateralTriangle(const Point& v1, const Point& v2, const Point& v3);
+    EquilateralTriangle(const Point& v1, double length);
     ~EquilateralTriangle();
 
     void draw() const override;
