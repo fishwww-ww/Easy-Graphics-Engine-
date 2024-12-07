@@ -3,8 +3,9 @@
 
 #include "Point.hpp"
 #include "Line.hpp"
+#include "Shape.hpp"
 
-class Rectangles {
+class Rectangles:virtual public Shape {
 private:
     Point topLeft; // 左上角顶点
     Point bottomRight; // 右下角顶点

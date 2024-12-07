@@ -6,7 +6,7 @@
 #include "Line.hpp"
 #include "Rectangles.hpp"
 
-class Parallelogram : public Shape{
+class Parallelogram :virtual public Shape{
 private:
     Point topLeft; // 左上角顶点
     Point bottomLeft; // 左下角顶点

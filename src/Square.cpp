@@ -4,15 +4,17 @@
 int Square::count = 0; // 初始化静态成员变量
 
 Square::Square(const Point& topLeft, double length)
-    : topLeft(topLeft), 
-      bottomLeft(topLeft.getX() + length, topLeft.getY()), 
-      bottomRight(topLeft.getX() + length, topLeft.getY() + length), 
-      topRight(topLeft.getX(), topLeft.getY() + length),
-      left(topLeft, bottomLeft), 
-      bottom(bottomLeft, bottomRight), 
-      right(bottomRight, topRight), 
-      top(topRight, topLeft),
-      length(length) {
+    : topLeft(topLeft.getX(), topLeft.getY()),
+    length(length),
+    Rectangles(topLeft, Point(topLeft.getX() + length, topLeft.getY() + length)),
+    Parallelogram(topLeft, length, length, 90),
+    bottomLeft(topLeft.getX(), topLeft.getY() + length),
+    bottomRight(topLeft.getX() + length, topLeft.getY() + length),
+    topRight(topLeft.getX() + length, topLeft.getY()),
+    left(topLeft, bottomLeft),
+    bottom(bottomLeft, bottomRight),
+    right(bottomRight, topRight),
+    top(topRight, topLeft) {
     count++; // 构造函数中增加计数
 }
 

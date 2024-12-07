@@ -19,14 +19,19 @@ int main()
 
     Point p1(100, 100);
     double width = 100;
-    double height = 50;
-    double angle = 30;
+    // double height = 50;
+    // double angle = 30;
 
-    Parallelogram* pm = new Parallelogram(p1, width, height, angle);
+    // Parallelogram* pm = new Parallelogram(p1, width, height, angle);
 
-    pm->draw();
-    pm->scale(4, p1);
-    pm->draw();
+    // pm->draw();
+    // pm->scale(4, p1);
+    // pm->draw();
+    Square* square = new Square(p1, width);
+    square->draw();
+    square->scale(2, p1);
+    square->draw();
+
 
 
     // std::string areaText = "Area: " + std::to_string(square->area());
