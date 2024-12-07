@@ -12,6 +12,12 @@ Point::~Point() {
     count--; // 析构函数中减少计数
 }
 
+double Point::distance(const Point& p) const {
+    int dx = x - p.x; // 计算 x 坐标之差
+    int dy = y - p.y; // 计算 y 坐标之差
+    return std::sqrt(dx * dx + dy * dy); // 使用欧几里得距离公式计算距离
+}
+
 void Point::draw() const {
     setcolor(color);
     circle(x, y, 1); // 画一个半径为1的圆来表示点
