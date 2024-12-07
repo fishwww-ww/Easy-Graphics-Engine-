@@ -4,8 +4,10 @@
 #include "Shape.hpp"
 #include "Point.hpp"
 #include "Line.hpp"
+#include "Rectangles.hpp"
+#include "Parallelogram.hpp"
 
-class Square : public Shape {
+class Square : public Rectangles, public Parallelogram {
 private:
     Point topLeft; // 顶点1
     Point bottomLeft; // 顶点2
@@ -20,6 +22,7 @@ private:
 
 public:
     Square(const Point& topLeft, double length);
+    // Square(const Point& topLeft, double length);
     ~Square();
 
     void draw() const override;

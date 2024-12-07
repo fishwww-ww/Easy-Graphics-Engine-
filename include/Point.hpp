@@ -14,6 +14,7 @@ public:
     Point(int x, int y, color_t color = EGERGB(0xFF, 0x0, 0x0));
     ~Point();
 
+    double distance(const Point& p) const; // 计算两点之间的距离
     void draw() const;
     void move(int dx, int dy); // 移动方法
     int getX() const { return x; } // 获取 x 坐标
