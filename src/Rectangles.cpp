@@ -46,21 +46,34 @@ void Rectangles::move(int dx, int dy) {
 }
 
 void Rectangles::rotate(double angle, const Point& pivot) {
+    // // 旋转顶点
+    // topLeft.rotate(angle, pivot);
+    // bottomRight.rotate(angle, pivot);
+
+    // // 更新边
+    // top = Line(topLeft, Point(bottomRight.getX(), topLeft.getY()));
+    // bottom = Line(Point(topLeft.getX(), bottomRight.getY()), bottomRight);
+    // left = Line(topLeft, Point(topLeft.getX(), bottomRight.getY()));
+    // right = Line(Point(bottomRight.getX(), topLeft.getY()), bottomRight);
+
+    // // 旋转边
+    // top.rotate(angle, pivot);
+    // bottom.rotate(angle, pivot);
+    // left.rotate(angle, pivot);
+    // right.rotate(angle, pivot);
+
+    Point topRight = Point(bottomRight.getX(), topLeft.getY());
+    Point bottomLeft = Point(topLeft.getX(), bottomRight.getY());
     // 旋转顶点
-    topLeft.rotate(angle, pivot);
+    topRight.rotate(angle, pivot);  
+    bottomLeft.rotate(angle, pivot);
     bottomRight.rotate(angle, pivot);
-
     // 更新边
-    top = Line(topLeft, Point(bottomRight.getX(), topLeft.getY()));
-    bottom = Line(Point(topLeft.getX(), bottomRight.getY()), bottomRight);
-    left = Line(topLeft, Point(topLeft.getX(), bottomRight.getY()));
-    right = Line(Point(bottomRight.getX(), topLeft.getY()), bottomRight);
+    top = Line(topLeft, topRight);
+    bottom = Line(bottomLeft, bottomRight);
+    left = Line(topLeft, bottomLeft);
+    right = Line(topRight, bottomRight);
 
-    // 旋转边
-    top.rotate(angle, pivot);
-    bottom.rotate(angle, pivot);
-    left.rotate(angle, pivot);
-    right.rotate(angle, pivot);
 }
 
 void Rectangles::mirror(const Point& axisPoint, bool horizontal) {
@@ -81,16 +94,13 @@ void Rectangles::scale(double factor, const Point& pivot) {
     int dy1 = topLeft.getY() - pivot.getY();
     int newTopLeftX = static_cast<int>(dx1 * factor) + pivot.getX();
     int newTopLeftY = static_cast<int>(dy1 * factor) + pivot.getY();
-
     int dx2 = bottomRight.getX() - pivot.getX();
     int dy2 = bottomRight.getY() - pivot.getY();
     int newBottomRightX = static_cast<int>(dx2 * factor) + pivot.getX();
     int newBottomRightY = static_cast<int>(dy2 * factor) + pivot.getY();
-
     // 更新顶点位置
     topLeft = Point(newTopLeftX, newTopLeftY);
     bottomRight = Point(newBottomRightX, newBottomRightY);
-
     // 更新边
     top = Line(topLeft, Point(bottomRight.getX(), topLeft.getY()));
     bottom = Line(Point(topLeft.getX(), bottomRight.getY()), bottomRight);

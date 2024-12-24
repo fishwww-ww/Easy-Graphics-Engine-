@@ -46,33 +46,27 @@ void EquilateralTriangle::move(int dx, int dy) {
 }
 
 void EquilateralTriangle::rotate(double angle, const Point& pivot) {
-    vertex1.rotate(angle, pivot); // 旋转顶点1
-    vertex2.rotate(angle, pivot); // 旋转顶点2
-    vertex3.rotate(angle, pivot); // 旋转顶点3
-    side1.rotate(angle, pivot); // 旋转边1
-    side2.rotate(angle, pivot); // 旋转边2
-    side3.rotate(angle, pivot); // 旋转边3
-    // Triangle::rotate(angle, pivot);
+    vertex1.rotate(angle, pivot); 
+    vertex2.rotate(angle, pivot); 
+    vertex3.rotate(angle, pivot); 
+    side1.rotate(angle, pivot); 
+    side2.rotate(angle, pivot); 
+    side3.rotate(angle, pivot); 
 }
 
 void EquilateralTriangle::mirror(const Point& axisPoint, bool horizontal) {
-    vertex1.mirror(axisPoint, horizontal); // 镜像顶点1
-    vertex2.mirror(axisPoint, horizontal); // 镜像顶点2
-    vertex3.mirror(axisPoint, horizontal); // 镜像顶点3
+    vertex1.mirror(axisPoint, horizontal); 
+    vertex2.mirror(axisPoint, horizontal); 
+    vertex3.mirror(axisPoint, horizontal); 
     side1.mirror(axisPoint, horizontal);
     side2.mirror(axisPoint, horizontal);
     side3.mirror(axisPoint, horizontal);
-    // Triangle::mirror(axisPoint, horizontal);
 }
 
 void EquilateralTriangle::scale(double factor, const Point& pivot) {
-    // vertex1.scale(factor, pivot); // 缩放顶点1
-    // vertex2.scale(factor, pivot); // 缩放顶点2
-    // vertex3.scale(factor, pivot); // 缩放顶点3
-    side1.scale(factor, pivot); // 缩放边1
-    side2.scale(factor, pivot); // 缩放边2
-    side3.scale(factor, pivot); // 缩放边3
-    // Triangle::scale(factor, pivot);
+    side1.scale(factor, pivot);
+    side2.scale(factor, pivot);
+    side3.scale(factor, pivot);
 }
 
 int EquilateralTriangle::getCount() {

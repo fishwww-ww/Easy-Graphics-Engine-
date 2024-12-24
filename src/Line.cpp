@@ -30,19 +30,16 @@ void Line::move(int dx, int dy) {
 void Line::rotate(double angle, const Point& pivot) {
     // 将角度转换为弧度
     double radians = angle * M_PI / 180.0;
-
     // 计算旋转后的起点坐标
     int dx1 = start.getX() - pivot.getX();
     int dy1 = start.getY() - pivot.getY();
     int newStartX = static_cast<int>(dx1 * cos(radians) - dy1 * sin(radians)) + pivot.getX();
     int newStartY = static_cast<int>(dx1 * sin(radians) + dy1 * cos(radians)) + pivot.getY();
-
     // 计算旋转后的终点坐标
     int dx2 = end.getX() - pivot.getX();
     int dy2 = end.getY() - pivot.getY();
     int newEndX = static_cast<int>(dx2 * cos(radians) - dy2 * sin(radians)) + pivot.getX();
     int newEndY = static_cast<int>(dx2 * sin(radians) + dy2 * cos(radians)) + pivot.getY();
-
     // 更新起点和终点位置
     start = Point(newStartX, newStartY);
     end = Point(newEndX, newEndY);
@@ -59,13 +56,11 @@ void Line::scale(double factor, const Point& pivot) {
     int dy1 = start.getY() - pivot.getY();
     int newStartX = static_cast<int>(dx1 * factor) + pivot.getX();
     int newStartY = static_cast<int>(dy1 * factor) + pivot.getY();
-
     // 计算缩放后的终点坐标
     int dx2 = end.getX() - pivot.getX();
     int dy2 = end.getY() - pivot.getY();
     int newEndX = static_cast<int>(dx2 * factor) + pivot.getX();
     int newEndY = static_cast<int>(dy2 * factor) + pivot.getY();
-
     // 更新起点和终点位置
     start = Point(newStartX, newStartY);
     end = Point(newEndX, newEndY);

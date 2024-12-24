@@ -31,13 +31,11 @@ void Circle::move(int dx, int dy) {
 void Circle::rotate(double angle, const Point& pivot) {
     // 将角度转换为弧度
     double radians = angle * M_PI / 180.0;
-
     // 计算旋转后的圆心坐标
     int dx = center.getX() - pivot.getX();
     int dy = center.getY() - pivot.getY();
     int newX = static_cast<int>(dx * cos(radians) - dy * sin(radians)) + pivot.getX();
     int newY = static_cast<int>(dx * sin(radians) + dy * cos(radians)) + pivot.getY();
-
     // 更新圆心位置
     center = Point(newX, newY);
 }
